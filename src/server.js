@@ -10,7 +10,6 @@ import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
-import user from "./models/userModel.js";
 
 // App Config
 const app = express(); //ทำให้มันเป็น json ได้
@@ -53,32 +52,9 @@ app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
 app.get("/", async (req, res) => {
-  const userData = await user.find({});
-  // res.send("API Working");
-  res.json({
-    userData,
-  });
+  res.send("API Working");
 });
 
 app.listen(port, () =>
   console.log("Server started on PORT : " + port + " 🌏 🙌")
 );
-
-/*
-//step 1
-import express from "express";
-import cors from "cors";
-
-//api config
-const app = express();
-const port = 3000;
-
-//api
-app.use(express.json()); //ทำให้มันเป็น json ได้
-app.use(express.urlencoded({ extended: true })); //เอาไว้อ่าน payload ได้
-app.use(cors()); //อนุญาตให้ origin  ให้ 2 port ที่แตกต่างกันเข้าถึงกันได้
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-*/

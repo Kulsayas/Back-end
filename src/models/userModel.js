@@ -10,13 +10,6 @@ const userSchema = new mongoose.Schema(
   { minimize: false }
 );
 
-// const userModel = mongoose.models.user || mongoose.model("user", userSchema);
+const userModel = mongoose.models.user || mongoose.model("user", userSchema);
 
-const user = new mongoose.Schema({
-  name: { type: String, required: true },
-});
-
-const userModel = mongoose.model("users", user);
-
-// export default userModel;
 export default userModel;
