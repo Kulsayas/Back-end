@@ -23,6 +23,7 @@ connectCloudinary();
 app.use(express.json());
 
 const allowedOrigins = [
+  "https://user-app-front-end.vercel.app",
   "https://admin-front-orpin.vercel.app",
   "https://admin-front-kulsayas-projects.vercel.app",
   "https://admin-front-b5dgzzsea-kulsayas-projects.vercel.app",
