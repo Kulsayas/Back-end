@@ -3,7 +3,7 @@ import multer from "multer";
 const storage = multer.diskStorage({
   //ต้องบอกเขาว่าไปเปิดเอาไฟล์จากที่ไหน และสามารถเปิดไฟล์ เอาไฟล์เก็บไว้ใน Object form uploade ของเรา ถ้าเป็น Image จะถูกไปเก็บที่ couldinary ถ้าเป็น text เก็บใน db
   filename: function (req, file, callback) {
-    callback(null, file, originalname); //null ใส่เอาไว้ตาม parameter ในกรณีนี้เราไม่ได้ทำอะไรกับ req. ก็ใส่เป็น null ไปก่อน
+    callback(null, file.originalname); //null ใส่เอาไว้ตาม parameter ในกรณีนี้เราไม่ได้ทำอะไรกับ req. ก็ใส่เป็น null ไปก่อน
   },
 });
 const uplode = multer({ storage });

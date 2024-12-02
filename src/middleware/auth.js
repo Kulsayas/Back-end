@@ -2,6 +2,7 @@ import jwt from "jsonwebtoken";
 // middleware คั้นกลาง ระหว่าง api routh ถ้าผ่านเข้าไปได้ ก็จะเข้าถึง db เรา
 const authUser = async (req, res, next) => {
   const { token } = req.headers;
+  console.log(token);
   if (!token) {
     return res.json({ success: false, message: "Not Authorized Login Again" });
   }
